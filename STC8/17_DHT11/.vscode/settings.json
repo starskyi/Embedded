@@ -1,0 +1,9 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "delay.h": "c",
+        "gpio.h": "c",
+        "config.h": "c",
+        "dht11.h": "c"
+    }
+}
