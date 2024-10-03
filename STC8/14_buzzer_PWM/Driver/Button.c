@@ -1,8 +1,5 @@
 #include "Button.h"
 
-extern void button_callback1();
-extern void butto2_callback1();
-
 void Button_Init()
 {
 	GPIO_InitTypeDef	GPIO_InitStructure;				//结构定义
@@ -12,112 +9,66 @@ void Button_Init()
 }
 
 
-void button1_down_call()
-{
-	printf("s1: key down\n");
-}
+extern button_down_call(u8 index);
 
-void button1_up_call()
-{
-	printf("s1: key up\n");
-	button_callback1();
-}
-
-void button2_down_call()
-{
-	printf("s2: key down\n");
-}
-
-void button2_up_call()
-{
-	printf("s2: key up\n");
-	butto2_callback1();
-}
-
-void button3_down_call()
-{
-	printf("s3: key down\n");
-	
-}
-
-void button3_up_call()
-{
-	printf("s3: key up\n");
-}
-void button4_down_call()
-{
-	printf("s4: key down\n");
-}
-void button4_up_call()
-{
-	printf("s4: key up\n");
-}
+extern button_up_call(u8 index);
 
 
 
 u8 status = 0x0f;
-
-
-void button1Click()
+void buttonClick()
 {
+	
 	if(IS_KEY_UP(0) && S1 == 0)
 	{
 		SET_KEY_DOWN(0);
-		button1_down_call();
+		button_down_call(1);
 		
 	}
 	else if(IS_KEY_DOWN(0) && S1 == 1)
 	{
 		SET_KEY_UP(0);
-		button1_up_call();
+		button_up_call(1);
 		
 	}
-}
-
-void button2Click()
-{
+	
 	if(IS_KEY_UP(1) && S2 == 0)
 	{
 		SET_KEY_DOWN(1);
-		button2_down_call();
+		button_down_call(2);
 		
 	}
 	else if(IS_KEY_DOWN(1) && S2 == 1)
 	{
 		SET_KEY_UP(1);
-		button2_up_call();
+		button_up_call(2);
 	}
-}
-
-void button3Click()
-{
+	
 	if(IS_KEY_UP(2) && S3 == 0)
 	{
 		SET_KEY_DOWN(2);
-		button3_down_call();
+		button_down_call(3);
 		
 	}
 	else if(IS_KEY_DOWN(2) && S3 == 1)
 	{
 		SET_KEY_UP(2);
-		button3_up_call();
+		button_up_call(3);
 	
 	}
-}
-
-void button4Click()
-{
-		
+	
 	if(IS_KEY_UP(3) && S4 == 0)
 	{
 		SET_KEY_DOWN(3);
-		button4_down_call();
+		button_down_call(4);
 		
 	}
 	else if(IS_KEY_DOWN(3) && S4 == 1)
 	{
 		SET_KEY_UP(3);
-		button4_up_call();
+		button_up_call(4);
+		
 		
 	}
+	
 }

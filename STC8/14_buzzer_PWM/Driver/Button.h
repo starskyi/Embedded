@@ -22,18 +22,7 @@
 #define SET_KEY_UP(i) status |= (1 << i)
 
 void Button_Init();
-void button1Click();
-void button2Click();
-void button3Click();
-void button4Click();
+void buttonClick();
 
-void button1_down_call();
-void button1_up_call();
-void button2_down_call();
-void button2_up_call();
-void button3_down_call();
-void button3_up_call();
-void button4_down_call();
-void button4_up_call();
 
 #endif

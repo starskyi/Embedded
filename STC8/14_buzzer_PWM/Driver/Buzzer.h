@@ -37,10 +37,12 @@
 
 void delay(u16 ms);
 void PWM_config(u16 hz_value);
-void Buzzer_Init(u8 GPIO, u8 GPIO_Pin);
+void Buzzer_Init();
 void Buzzer_Stop();
 void Buzzer_Sing(u8 music[], u8 duration[], u16 hz[], u16 len);
-
+void two_tiger();
+void sky_city();
+void Buzzer_loud();
 
 #endif
 
